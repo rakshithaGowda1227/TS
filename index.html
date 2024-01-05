@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="" >
+    <style>
+        body{
+            padding-right: 1.5% ;
+            margin-bottom: auto;
+            background-position: center;
+            background-color: rgb(78, 244, 186);
+            place-items: center;
+        }
+        input{
+            border-color: rgb(219, 106, 187);
+            border-style: groove;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            font-size: larger;
+            font-family: monospace;
+            background-color: #de9ac8;
+        }
+        button{
+            border-color: rgb(208, 205, 50);
+            border-style: dotted;
+            padding-top: 14px ;
+            padding-bottom: 4px;
+            border-radius: 10px;
+            width: 100px;
+            font-size: larger;
+            font-family: monospace;
+            border-color: rgb(242, 251, 251);
+            background-color: #6d6868;
+
+        }
+        button.hover{
+            background-color: #6e3535;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <input type="text" id="myspeech" placeholder="Enter any Text">
+        <button onclick="speak()" >Speak</button>
+    
+    </div>
+
+</body>
+<script>
+    function speak(){
+        var texttoSpeak = document.getElementById("myspeech").value;//to call the value y its ID
+        var speechSensor1 = window.speechSynthesis;//to get the sensor 
+        var utterance =  new SpeechSynthesisUtterance(texttoSpeak);//converts the text to speech,converts into bits and the computer understandable language
+        // utterance.voice = 'female'
+        speechSensor1.speak(utterance)
+    }
+
+</script>
+
+</html>
